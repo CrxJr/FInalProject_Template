@@ -6,9 +6,9 @@ namespace FinalProject_Template.Services.Network
 {
     public class ApiConstant
     {
-        public static string GetTemperatureUrl()
+        public static string GetAllTemperatureUrl()
         {
-            return $"https://Chunk3r.pythonanywhere.com/all";
+            return $"https://Chunk3r.pythonanywhere.com";
         }
     }
 }

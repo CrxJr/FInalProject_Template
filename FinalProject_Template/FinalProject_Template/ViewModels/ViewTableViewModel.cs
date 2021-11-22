@@ -29,12 +29,12 @@ namespace FinalProject_Template.ViewModels
 
         private async Task GetTableListing()
         {
-            var result = await networkService.GetAsync<ListOfTemperatures>(ApiConstant.GetTemperatureUrl());
+            var result = await networkService.GetAsync<ListOfTemperatures>(ApiConstant.GetAllTemperatureUrl());
 
             if (result == null)
                 return;
 
-            Items = new ObservableRangeCollection<Temperature>(result.totalResults);
+            Items = new ObservableRangeCollection<Temperature>(result.All);
             OnPropertyChanged("Items");
         }
 

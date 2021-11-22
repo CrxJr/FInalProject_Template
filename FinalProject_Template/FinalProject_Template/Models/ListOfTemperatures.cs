@@ -6,8 +6,8 @@ namespace FinalProject_Template.Models
 {
    public  class ListOfTemperatures
     {
-        public List<Temperature> Search { get; set; }
-        public List<Temperature> totalResults { get; set; }
+        public List<Temperature> All { get; set; }
+        public string totalResults { get; set; }
         public string Response { get; set; }
     }
 }
