@@ -5,42 +5,49 @@
              x:Class="FinalProject_Template.Views.ViewTablePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Table Listing"
+            <Label Text="Table Listing" FontSize="Title"
                 VerticalOptions="StartAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 
             <CollectionView ItemsSource="{Binding Items}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="20" />
+                </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame Margin="10, 0, 10, 40"
+                        <Frame
                            Padding="0"
                            CornerRadius="50"
                            BackgroundColor="LightSkyBlue"
                            HorizontalOptions="Center"
                            IsClippedToBounds="True">
 
-                            <StackLayout Orientation="Vertical"
-                                         Margin="0, 20, 0, 20">
+                            <StackLayout Orientation="Vertical">
                                 <Label HorizontalOptions="Center"
-                                       Text="{Binding ReadingID, StringFormat='ReadingID: {0}'}"/>
+                                       Text="{Binding ReadingID, StringFormat='ReadingID: {0}'}"
+                                       FontSize="Large" FontAttributes="Bold"/>
                                 <Label HorizontalOptions="Center"
-                                       Text="{Binding Celsius, StringFormat='Celsius: {0}°C'}"/>
+                                       Text="{Binding Celsius, StringFormat='Celsius: {0}°C'}"
+                                       FontSize="Large" FontAttributes="Bold"/>
                                 <Label HorizontalOptions="Center"
-                                       Text="{Binding Fahrenheit, StringFormat='Fahrenheit: {0}°F'}"/>
+                                       Text="{Binding Fahrenheit, StringFormat='Fahrenheit: {0}°F'}"
+                                       FontSize="Large" FontAttributes="Bold"/>
                                 <Label HorizontalOptions="Center"
-                                       Text="{Binding Humidity, StringFormat='Humidity: {0}%'}"/>
+                                       Text="{Binding Humidity, StringFormat='Humidity: {0}%'}"
+                                       FontSize="Large" FontAttributes="Bold"/>
                                 <Label HorizontalOptions="Center"
-                                       Text="{Binding Time, StringFormat='Time: {0}'}"/>
+                                       Text="{Binding Time, StringFormat='Time: {0}'}"
+                                       FontSize="Large" FontAttributes="Bold"/>
                             </StackLayout>
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <StackLayout>
+                        <Label Text="No data to show"/>
+                    </StackLayout>
+                </CollectionView.EmptyView>
             </CollectionView>
-
-            <Button Text="Get Listing"
-                    VerticalOptions="End"
-                    HorizontalOptions="Center"
-                    Command="{Binding PerformListCommand}"/>
 
             <Button Text="Go Back"
                     VerticalOptions="End"

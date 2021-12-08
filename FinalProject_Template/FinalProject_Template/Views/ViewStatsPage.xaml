@@ -5,10 +5,25 @@
              x:Class="FinalProject_Template.Views.ViewStatsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Stats"
+            <Label Text="Stats" FontSize="Title" FontAttributes="Bold,Italic"
                 VerticalOptions="StartAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 
+            <CollectionView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="Hello"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <StackLayout>
+                        <Label Text="No data to show" HorizontalOptions="CenterAndExpand" FontSize="Large"/>
+                    </StackLayout>
+                </CollectionView.EmptyView>
+            </CollectionView>
+            
             <Button Text="Go Back"
                     VerticalOptions="End"
                     HorizontalOptions="Center"

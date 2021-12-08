@@ -15,19 +15,18 @@ namespace FinalProject_Template.ViewModels
 
         public ObservableRangeCollection<Temperature> Items { get; set; }
         public AsyncCommand GoBackCommand { get; }
-        public AsyncCommand PerformListCommand { get; }
         public ViewTableViewModel(INetworkService networkService)
         {
             this.networkService = networkService;
 
             Title = "View Table";
 
-            PerformListCommand = new AsyncCommand(GetTableListing);
-
+            Items = new ObservableRangeCollection<Temperature>();
+            GetTableListing();
             GoBackCommand = new AsyncCommand(GoBack);
         }
 
-        private async Task GetTableListing()
+        private async void GetTableListing()
         {
             var result = await networkService.GetAsync<ListOfTemperatures>(ApiConstant.GetAllTemperatureUrl());
 
